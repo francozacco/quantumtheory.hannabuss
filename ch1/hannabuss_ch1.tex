@@ -1,0 +1,93 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{adjustbox}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage[mathscr]{euscript}
+
+\title{\textbf{Solved selected problems of An Introduction to Quantum Theory
+by Keith Hannabuss}}
+\author{Franco Zacco}
+\date{}
+
+\addtolength{\topmargin}{-3cm}
+\addtolength{\textheight}{3cm}
+
+\newcommand{\hatr}{\bm{\hat{r}}}
+\newcommand{\hatx}{\bm{\hat{x}}}
+\newcommand{\haty}{\bm{\hat{y}}}
+\newcommand{\hatz}{\bm{\hat{z}}}
+\newcommand{\hatth}{\bm{\hat{\theta}}}
+\newcommand{\hatphi}{\bm{\hat{\phi}}}
+\newcommand{\hatrho}{\bm{\hat{\rho}}}
+\theoremstyle{definition}
+\newtheorem*{solution*}{Solution}
+\renewcommand*{\proofname}{Solution}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\section*{Chapter 1 - Introduction}
+\begin{proof}{1.1}
+\begin{itemize}
+\item [(i)] A frequency of $200 kHz$ corresponds to an energy of
+\begin{align*}
+    E = \hbar \omega = 1.0546 \times 10^{-34} \cdot 2\pi \cdot 2 \times 10^5
+    = 1.3252 \times 10^{-28}~J
+\end{align*}
+\item [(ii)] A frequency of $4.95 \times 10^{14} Hz$ corresponds to an energy
+of
+\begin{align*}
+    E = \hbar \omega = 1.0546 \times 10^{-34} \cdot 2\pi \cdot 4.95 \times 10^{14}
+    = 3.2799 \times 10^{-19}~J
+\end{align*}
+\item [(iii)] A frequency of $10^{20} Hz$ corresponds to an energy of
+\begin{align*}
+    E = \hbar \omega = 1.0546 \times 10^{-34} \cdot 2\pi \cdot 10^{20}
+    = 6.62624\times 10^{-14}~J
+\end{align*}
+\item [(iv)] A frequency of $10^{23} Hz$ corresponds to an energy of
+\begin{align*}
+    E = \hbar \omega = 1.0546 \times 10^{-34} \cdot 2\pi \cdot 10^{23}
+    = 6.62624\times 10^{-11}~J
+\end{align*}
+\end{itemize}
+\end{proof}
+
+\cleardoublepage
+\begin{proof}{1.2}
+Let a radio station broadcast on a frequency of $200~kHz$ then each photon
+generated has an energy of
+\begin{align*}
+    E = 1.0546 \times 10^{-34} \cdot 2\pi \cdot 2 \times 10^5
+    = 1.3252 \times 10^{-28}~J
+\end{align*}
+So a $200~kW = 200~kJ/s$ transmitter generates 
+\begin{align*}
+    \frac{200\times 10^3}{1.3252 \times 10^{-28}}
+    = 1.5092 \times 10^{33}
+\end{align*}
+photons per second.
+
+Let us assume the radio station broadcasts photons in every direction then 
+the radio station broadcasts the following number of photons per meter squared
+per second
+\begin{align*}
+    \frac{1.5092 \times 10^{33}}{4\pi\cdot (1\times 10^6~m)^2}
+    = 1.2009 \times 10^{20}
+\end{align*}
+
+Finally if the aerial were on a space probe at a distance of 3000 millon km of
+the earth the number of photons per meter squared per second will be
+\begin{align*}
+    \frac{1.5092 \times 10^{33}}{4\pi\cdot (3 \times 10^{12}~m)^2}
+    = 1.3344 \times 10^{7}
+\end{align*}
+\end{proof}
+\end{document}
