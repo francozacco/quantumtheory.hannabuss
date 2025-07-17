@@ -1,0 +1,305 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{adjustbox}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage{physics}
+\usepackage[mathscr]{euscript}
+
+\title{\textbf{Solved selected problems of An Introduction to Quantum Theory
+by Keith Hannabuss}}
+\author{Franco Zacco}
+\date{}
+
+\addtolength{\topmargin}{-3cm}
+\addtolength{\textheight}{3cm}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\hatr}{\bm{\hat{r}}}
+\newcommand{\hatx}{\bm{\hat{x}}}
+\newcommand{\haty}{\bm{\hat{y}}}
+\newcommand{\hatz}{\bm{\hat{z}}}
+\newcommand{\hatth}{\bm{\hat{\theta}}}
+\newcommand{\hatphi}{\bm{\hat{\phi}}}
+\newcommand{\hatrho}{\bm{\hat{\rho}}}
+\newcommand{\sci}[1]{\times 10^{#1}}
+\theoremstyle{definition}
+\newtheorem*{solution*}{Solution}
+\renewcommand*{\proofname}{Solution}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\section*{Chapter 2 - Wave Mechanics}
+\begin{proof}{2.1}
+Let a sodium atom with a mass of $3.82\sci{-26}~kg$ emit a photon with a
+wavelength of $5.89\sci{-7}~m$.
+
+From De Broglie observations the momentum of the emitted photon is
+$|\bm{p}| = \hbar |\bm{k}|$ where $|\bm{k}| = 2\pi/\text{wavelength}$ hence
+in this case
+\begin{align*}
+    |\bm{k}| = \frac{2\pi}{5.89\sci{-7}~m} = 10667547.21~m^{-1}
+\end{align*}
+And 
+\begin{align*}
+    |\bm{p}| = 1.0546\sci{-34}~Js \cdot 10667547.21~m^{-1}
+    = 1.1249\sci{-27}~kgm/s
+\end{align*}
+Also, we know that $|\bm{p}| = mv$ so if we assume that the sodium atom was
+at rest, and we use the conservation of momentum, then the velocity of recoil
+is given by 
+\begin{align*}
+    v = \frac{|\bm{p|}}{m} = \frac{1.1249\sci{-27}~kgm/s}{3.82\sci{-26}~kg}
+    = 0.0294~m/s
+\end{align*}
+\end{proof}
+
+\cleardoublepage
+\begin{proof}{2.2}
+Schrödinger's time-independent equation for a particle moving in one dimension
+with energy $E$ is
+\begin{align*}
+    -\frac{\hbar^2}{2m} \dv[2]{\psi}{x} + V(x)\psi = E\psi
+\end{align*}
+In this case, the particle is under the influence of a constant potential
+$V(x) = V_0$ in the interval $[0, a]$. To avoid problems at the endpoints
+we make $\psi$ vanish there, hence we get that
+\begin{align*}
+    -\frac{\hbar^2}{2m} \dv[2]{\psi}{x} = (E - V_0)\psi
+\end{align*}
+For $x \in (0,a)$ and the boundary conditions $\psi(0) = 0 = \psi(a)$.\\
+If we assume that $E > 0$ then the general solution of the differential
+equation is
+\begin{align*}
+    \psi(x) = A\cos(\sqrt{2m(E - V_0)}x/\hbar) + B\sin(\sqrt{2m(E - V_0)}x/\hbar)
+\end{align*}
+The condition $\psi(0) = 0$ implies that $A$ must be zero.\\
+On the other hand, the condition $\psi(a) = 0$ is satisfied if
+$$\sqrt{2m(E - V_0)}/\hbar = n\pi/a$$
+For some integer $n$, then the possible energies are
+\begin{align*}
+    2m(E_n - V_0) &= \frac{n^2\pi^2\hbar^2}{a^2}\\
+    E_n &= V_0 + \frac{n^2\pi^2\hbar^2}{2m a^2}
+\end{align*}
+\end{proof}
+
+\cleardoublepage
+\begin{proof}{2.3}
+Let a particle of mass $m$ move in the rectangle $[0, a] \times [0, b]$
+in the $xy$-plane under the influence of a zero potential.
+The Schrödinger equation is given by
+\begin{align*}
+    -\frac{\hbar^2}{2m} \laplacian{\psi} = E\psi
+\end{align*}
+If we assume that $\psi(x,y)$ is a product of two functions
+$\psi(x,y) = X(x)Y(y)$ then we can write it as
+\begin{align*}
+    -\frac{\hbar^2}{2m} \bigg(Y\pdv[2]{X}{x} + X\pdv[2]{Y}{y}\bigg) &= E XY\\
+    -\frac{\hbar^2}{2m} \bigg(\frac{1}{X}\pdv[2]{X}{x} + \frac{1}{Y}\pdv[2]{Y}{y}\bigg) &= E
+\end{align*}
+Where we divided by $XY$. Then we see that the first and second term on the
+left side must be equal to a constant i.e.
+\begin{align*}
+    -\frac{\hbar^2}{2m}\frac{1}{X}\pdv[2]{X}{x} &= \alpha
+    \qquad
+    -\frac{\hbar^2}{2m}\frac{1}{Y}\pdv[2]{Y}{y} = \beta
+\end{align*}
+So we get that
+\begin{align*}
+    -\frac{\hbar^2}{2m}\pdv[2]{X}{x} &= \alpha X
+    \qquad
+    -\frac{\hbar^2}{2m}\pdv[2]{Y}{y} = \beta Y
+\end{align*}
+From the one-dimmensional square well we know that the solution to these
+differential equations is
+\begin{align*}
+    X = A \sin(j\pi x/a) \qquad Y = B \sin(k\pi y/b)
+\end{align*}
+Where $\sqrt{2m\alpha}/\hbar = j\pi/a$ and $\sqrt{2m\beta}/\hbar = k\pi/b$.
+Also, we used that the boundary conditions are $\psi(0) = \psi(a) = \psi(b) = 0$
+and we defined $j,k$ integers. Then we have that
+\begin{align*}
+    \alpha &=\frac{j^2\pi^2\hbar^2}{2ma^2}
+    \qquad
+    \beta =\frac{k^2\pi^2\hbar^2}{2mb^2}
+\end{align*} 
+But we said that $\alpha + \beta = E$ hence the permitted energies of the
+system are
+\begin{align*}
+    E_{j,k} = \frac{j^2\pi^2\hbar^2}{2ma^2} + \frac{k^2\pi^2\hbar^2}{2mb^2}
+    = \frac{\pi^2\hbar^2}{2m}\bigg(\frac{j^2}{a^2} + \frac{k^2}{b^2}\bigg)
+\end{align*}
+Let now $a = b$ then the wave function becomes 
+\begin{align*}
+    \psi(x,y) = C\sin(j\pi x/a)\sin(k\pi y/a)
+\end{align*}
+Where we renamed $AB = C$. Applying the normalization condition then we have
+that
+\begin{align*}
+    |C|^2\int_{0}^{a}\int_{0}^{a}\sin^2(j\pi x/a) \sin^2(k\pi y/a)~dxdy &= 1\\
+    |C|^2 \frac{a}{2}\int_{0}^{a}\sin^2(k\pi y/a)~dy &= 1\\
+    C &= \frac{2}{a}
+\end{align*} 
+Hence
+\begin{align*}
+    \psi(x,y) = \frac{2}{a}\sin(j\pi x/a)\sin(k\pi y/a)
+\end{align*}
+But since we are considering an energy of $5\pi^2\hbar^2/2ma^2$ then using the
+equation for $E_{j,k}$ must be that $j = 1$ and $k = 2$ or $j = 2$ and $k = 1$.
+\\
+Therefore the two normalized wave functions corresponding to the energy 
+$5\pi^2\hbar^2/2ma^2$ are
+\begin{align*}
+    \psi_{1,2}(x,y) &= \frac{2}{a}\sin(\pi x/a)\sin(2\pi y/a)\\
+    \psi_{2,1}(x,y) &= \frac{2}{a}\sin(2\pi x/a)\sin(\pi y/a)
+\end{align*}
+Finally, the probability that the particle lies in the region 
+$$S = \{(x,y) \in \R : x \leq y\}$$
+in each case can be computed by integration as follows
+\begin{align*}
+    \int_S |\psi_{1,2}(x,y)|^2~dxdy
+    &= \frac{4}{a^2}\int_0^a\int_0^y \sin^2(\pi x/a)\sin^2(2\pi y/a)~dxdy\\
+    &= \frac{4}{a^2}\int_0^a
+    \bigg[\frac{y}{2} - \frac{a\sin(2\pi y/a)}{4\pi}\bigg]\sin^2(2\pi y/a)~dy\\
+    &= \frac{1}{\pi a^2}\int_0^a
+    2\pi y\sin^2(2\pi y/a) - a\sin^3(2\pi y/a)~dy\\
+    &= \frac{1}{\pi a^2} \bigg[\frac{\pi a^2}{2} - 0\bigg]\\
+    &= \frac{1}{2}
+\end{align*}
+And
+\begin{align*}
+    \int_S |\psi_{2,1}(x,y)|^2~dxdy
+    &= \frac{4}{a^2}\int_0^a\int_0^y \sin^2(2\pi x/a)\sin^2(\pi y/a)~dxdy\\
+    &= \frac{4}{a^2}\int_0^a
+    \bigg[\frac{y}{2} - \frac{a\sin(4\pi y/a)}{8\pi}\bigg]\sin^2(\pi y/a)~dy\\
+    &= \frac{1}{2\pi a^2}\int_0^a
+    4\pi y\sin^2(\pi y/a) - a\sin(4\pi y/a)\sin^2(\pi y/a)~dy\\
+    &= \frac{1}{2\pi a^2} \bigg[\pi a^2 - 0\bigg]\\
+    &= \frac{1}{2}
+\end{align*}
+\end{proof}
+
+\cleardoublepage
+\begin{proof}{2.4}
+Let a particle of mass $m$ move within a ball of radius $a \in \R^3$ under the
+influence of the potential $V(r) = 0$. Then Schrödinger equation becomes
+\begin{align*}
+    -\frac{\hbar^2}{2m} \laplacian{\psi} = E\psi
+\end{align*}
+Let us take a wave function $\psi(r)$ independent of the angles then the
+equation in spherical coordinates become
+\begin{align*}
+    -\frac{\hbar^2}{2m}\frac{1}{r^2}\pdv{r}(r^2\pdv{\psi}{r}) &= E\psi
+\end{align*}
+But since
+\begin{align*}
+    \pdv{r}(r^2\pdv{\psi}{r}) = 
+    2r\pdv{\psi}{r} + r^2\pdv[2]{\psi}{r}
+    = r\pdv[2]{(r\psi)}{r}
+\end{align*}
+We get that
+\begin{align*}
+    -\frac{\hbar^2}{2m}\frac{1}{r}\pdv[2]{(r\psi)}{r} &= E\psi
+\end{align*}
+Or
+\begin{align*}
+    -\frac{\hbar^2}{2m}\pdv[2]{(r\psi)}{r} &= E(r\psi)
+\end{align*}
+This equation is the same equation we solved for the square well for which we
+know that the solution is 
+\begin{align*}
+    r\psi(r) &= A\cos(\sqrt{2mE}r/\hbar) + B\sin(\sqrt{2mE}r/\hbar)
+\end{align*}
+We see that at $r = 0$ we get that $r\psi(0) = 0\cdot\psi(0) = 0$ and we know
+that $\psi(a) = 0$ then $r\psi(a) = 0$ so the boundary conditions are the same
+as the ones used for the square well so the general solution is
+\begin{align*}
+    \psi(r) &= \frac{B}{r}\sin(n\pi r/a)
+\end{align*}
+Where we used that the boundary condition at $a$ is satisfied if 
+$\sqrt{2mE}/\hbar = n\pi/a$.
+Then the energies satisfying the equation are
+\begin{align*}
+    E_n = \frac{n^2\pi^2\hbar^2}{2ma^2}
+\end{align*}
+Now we apply the normalization condition to determine $B$ as follows
+\begin{align*}
+    1 &= |B|^2\int_0^{2\pi}\int_0^\pi\int_0^a \frac{\sin^2(n\pi r/a)}{r^2}
+    r^2\sin\theta~drd\theta d\phi\\
+    &= |B|^2\int_0^{2\pi}\int_0^\pi\int_0^a \sin^2(n\pi r/a)
+    \sin\theta~drd\theta d\phi\\
+    &= |B|^2\frac{a}{2}\int_0^{2\pi}\int_0^\pi
+    \sin\theta~d\theta d\phi\\
+    &= 2\pi a |B|^2
+\end{align*}
+Then $B = 1/\sqrt{2\pi a}$, and hence the general solution is
+\begin{align*}
+    \psi(r) &= \frac{1}{r\sqrt{2\pi a}}\sin(n\pi r/a)
+\end{align*}
+Finally, the probability of finding the particle within a distance
+$\frac{1}{2}a$ is given by
+\begin{align*}
+    \int |\psi(r)|^2~dV &=\int_0^{2\pi}\int_0^\pi\int_0^{a/2}
+    \frac{\sin^2(n\pi r/a)}{2\pi a r^2}r^2\sin\theta~drd\theta d\phi\\
+    &=\frac{1}{2\pi a}\int_0^{2\pi}\int_0^\pi\int_0^{a/2}
+    \sin^2(n\pi r/a)\sin\theta~drd\theta d\phi\\
+    &=\frac{1}{2\pi a}\frac{a}{4}\int_0^{2\pi}\int_0^\pi
+    \sin\theta~d\theta d\phi\\
+    &=\frac{1}{8\pi} 4\pi\\
+    &= \frac{1}{2}
+\end{align*}
+\end{proof}
+
+\cleardoublepage
+\begin{proof}{2.5}\\
+We know that the mean position of the particle on the $z$ axis is computed as
+\begin{align*}
+    \int_{-\infty}^\infty z|\psi(r)|^2~dV
+\end{align*}
+Then using that $\psi(r)$ vanishes at the boundaries we get that
+\begin{align*}
+    \int_{-\infty}^\infty z|\psi(r)|^2~dV
+    &= \int_0^{a}\int_0^{2\pi}\int_0^\pi
+    r\cos\theta\frac{\sin^2(n\pi r/a)}{2\pi a r^2}r^2\sin\theta~d\theta d\phi dr
+    = 0
+\end{align*}
+Where we used that $\int_0^\pi \cos\theta\sin\theta~d\theta = 0$.\\
+In the same way, for $x = r\sin\theta\cos\phi$ we have that
+\begin{align*}
+    \int_{-\infty}^\infty x|\psi(r)|^2~dV
+    &= \int_0^{a}\int_0^{2\pi}\int_0^\pi
+    r\sin\theta\cos\phi\frac{\sin^2(n\pi r/a)}{2\pi a r^2}r^2\sin\theta~d\theta d\phi dr
+    = 0
+\end{align*}
+Since $\int_{0}^{2\pi} \cos\phi = 0$ and for $y = r\sin\theta\sin\phi$ we get
+that
+\begin{align*}
+    \int_{-\infty}^\infty y|\psi(r)|^2~dV
+    &= \int_0^{a}\int_0^{2\pi}\int_0^\pi
+    r\sin\theta\sin\phi\frac{\sin^2(n\pi r/a)}{2\pi a r^2}r^2\sin\theta~d\theta d\phi dr
+    = 0
+\end{align*}
+Again because $\int_{0}^{2\pi} \sin\phi = 0$.\\
+Therefore the mean position of the particle is at the origin.
+\\\\
+Now we compute the variance of its height above the center as follows
+\begin{align*}
+    \int_{-\infty}^\infty z^2|\psi(r)|^2~dV
+    &= \int_0^{a}\int_0^{2\pi}\int_0^\pi
+    r^2\cos^2\theta\frac{\sin^2(n\pi r/a)}{2\pi a r^2}r^2\sin\theta~d\theta d\phi dr\\
+    &= \frac{1}{2\pi a}\int_0^{a}\int_0^{2\pi}\int_0^\pi
+    r^2\sin^2(n\pi r/a)\cos^2\theta\sin\theta~d\theta d\phi dr\\
+    &= \frac{2}{3 a}\int_0^{a} r^2\sin^2(n\pi r/a)~dr\\
+    &= \frac{2}{3}\frac{a^2(4\pi^3n^3 - 6\pi n)}{24\pi^3 n^3}
+\end{align*}
+\end{proof}
+
+
+\end{document}
